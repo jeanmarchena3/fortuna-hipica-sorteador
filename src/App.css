@@ -153,3 +153,24 @@
   from {left: 0px;}
   to {left: 45px;}
 }
+
+.button-partida{
+  height: 100px;
+  border-radius: 40px;
+  background: #FF0000;
+  width: 270px;
+  font-size: 55px;
+  position: absolute;
+  bottom: 70px;
+  left: 70px;
+  background-color: #FF0000;
+  border-color: #FF0000;
+  color: white;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.button-partida:hover{
+  border-color: white !important;
+  color: black !important;
+}

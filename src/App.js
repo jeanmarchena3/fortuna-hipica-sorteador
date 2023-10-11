@@ -121,9 +121,9 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div>
-        <Button onClick={activarAnimacion}>Activar animacion</Button>
-      </div>
+      <Button onClick={activarAnimacion} className='button-partida'>
+          Partida
+      </Button>
     </div>
   );
 };
