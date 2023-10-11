@@ -4,13 +4,11 @@ import { Button } from 'antd';
 import './App.css';
 
 const App = () => {
-  const [activateAnimation, setActivateAnimation] = useState(false);
-
+  const [activateAnimation, setActivateAnimation] = useState(0);
   const activarAnimacion = () =>{
-    console.log('activar animacion');
-    setActivateAnimation(true);
+    console.log('activar animacion', activateAnimation);
+    setActivateAnimation((activateAnimation + 1) % 2);
   };
-
   return (
     <div className='App'>
       <div className='main-container-info'>
