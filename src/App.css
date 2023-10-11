@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+.App{
+  background-image: url('../src/images/bg-image.png');
+  height: 100vh !important;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.m-l-10{
+  margin-left: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.m-r-10{
+  margin-right: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.m-l-10-percent{
+  margin-left: 10%;
+}
+
+.m-r-10-percent{
+  margin-right: 10%;
+}
+
+.m-b-20{
+  margin-bottom: 20px;
+}
+
+.main-container-info{
+  position: absolute;
+  top: 188px;
+  left: 250px;
+  width: 1032px;
+}
+
+.container-info-reunion{
+  display: flex;
+  flex-direction: row;
+}
+
+.container-info-reunion > div{
+  height: 43px;
+  border-radius: 20px;
+  background: white;
+  width: 250px;
+}
+
+.container-data-reunion{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 30px;
+}
+
+.main-container-caballos{
+  position: absolute;
+  bottom: 100px;
+  right: 334px;
+  width: 425px;
+}
+
+.container-info-caballos{
   display: flex;
   flex-direction: column;
+}
+
+.container-info-caballos > div{
+  height: 70px !important;
+  border-radius: 60px;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+}
+
+.text-caballos-numero{
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.text-caballos-nombre{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.wrapper{
+  width: 230px;
+  background: white;
+  height: 40px;
+  text-align: right;
+  border-radius: 25px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.word {
+  white-space: nowrap;
+  -webkit-animation: rightThenLeft 3s linear;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@-webkit-keyframes rightThenLeft {
+  0%   {margin-right:100%;}
+  50%  {margin-right:50%;}
+  100% {
+    margin-right:0%;
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.container {
+background-color: #936510;
+width: 250px;
+height: 250px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.sub-wrapper {
+width: 200px;
+padding: 10px;
 }
