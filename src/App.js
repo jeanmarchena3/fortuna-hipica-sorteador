@@ -24,35 +24,61 @@ const App = () => {
   let iterationCount1 = 0;
   let iterationCount2 = 0;
   let iterationCount3 = 0;
-  // Animation iterations
-  animation.addEventListener('animationiteration', () => {
-    iterationCount1++;
-    texto1.textContent = nombres1[iterationCount1];
-  });
-  animation2.addEventListener('animationiteration', () => {
-    iterationCount2++;
-    texto2.textContent = nombres2[iterationCount2];
-  });
-  animation3.addEventListener('animationiteration', () => {
-    iterationCount3++;
-    texto3.textContent = nombres3[iterationCount3];
-  });
-  // End animations
-  animation.addEventListener('animationend', () => {
-    texto1.textContent = nombres1[0];
-  });
-  animation2.addEventListener('animationend', () => {
-    texto2.textContent = nombres2[0];
-  });
-  animation3.addEventListener('animationend', () => {
-    texto3.textContent = nombres3[0];
-  });
+
+  if (animation) {
+    // Animation iterations
+    animation.addEventListener('animationiteration', () => {
+      iterationCount1++;
+      texto1.textContent = nombres1[iterationCount1];
+    });
+
+    // End animations
+    animation.addEventListener('animationend', () => {
+      texto1.textContent = nombres1[0];
+    });
+  }
+
+  if (animation2) {
+    // Animation iterations
+    animation2.addEventListener('animationiteration', () => {
+      iterationCount2++;
+      texto2.textContent = nombres2[iterationCount2];
+    });
+
+    // End animations
+    animation2.addEventListener('animationend', () => {
+      texto2.textContent = nombres2[0];
+    });
+  }
+
+  if (animation3) {
+    // Animation iterations
+    animation3.addEventListener('animationiteration', () => {
+      iterationCount3++;
+      texto3.textContent = nombres3[iterationCount3];
+    });
+
+    // End animations
+    animation3.addEventListener('animationend', () => {
+      texto3.textContent = nombres3[0];
+    });
+  }
+
   // activarAnimacion
   const activarAnimacion = () =>{
     // Toggle of active class, if None then active else None
-    animation.classList.toggle('active');
-    animation2.classList.toggle('active');
-    animation3.classList.toggle('active');
+    if (animation) {
+      animation.classList.toggle('active');
+    }
+
+    if (animation2) {
+      animation2.classList.toggle('active');
+    }
+
+    if (animation3) {
+      animation3.classList.toggle('active');
+    }
+
     setActivateAnimation((activateAnimation + 1) % 2);
   };
   return (

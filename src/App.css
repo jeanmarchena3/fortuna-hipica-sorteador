@@ -56,7 +56,7 @@
 
 .main-container-caballos{
   position: absolute;
-  bottom: 100px;
+  bottom: 80px;
   right: 334px;
   width: 425px;
 }
@@ -86,48 +86,9 @@
   font-weight: bold;
 }
 
-/* .wrapper{
-  width: 230px;
-  background: white;
-  height: 40px;
-  text-align: right;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-} */
-
-/* .word {
-  white-space: nowrap;
-  -webkit-animation: rightThenLeft 3s linear;
-} */
-
-/* @-webkit-keyframes rightThenLeft {
-  0%   {margin-right:100%;}
-  50%  {margin-right:50%;}
-  100% {
-    margin-right:0%;
-    opacity: 0;
-  }
-} */
-
-/* .container {
-background-color: #936510;
-width: 250px;
-height: 250px;
-display: flex;
-justify-content: center;
-align-items: center;
-} */
-
-/* .sub-wrapper {
-width: 200px;
-padding: 10px;
-} */
-
 .inactiveAnimation {
   background: transparent;
   position: relative;
-  width: 300px;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -139,7 +100,6 @@ padding: 10px;
 .animation3 {
   background: transparent;
   position: relative;
-  width: 300px;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -157,7 +117,6 @@ padding: 10px;
 .animation2 {
   background: transparent;
   position: relative;
-  width: 300px;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -176,7 +135,6 @@ padding: 10px;
 .animation {
   background: transparent;
   position: relative;
-  width: 300px;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -184,7 +142,6 @@ padding: 10px;
   justify-content: space-between;
   align-items: center;
 }
-
 
 .animation.active {
   animation-duration: 1s;
