@@ -32,21 +32,21 @@ const App = () => {
       <div className='main-container-caballos'>
         <div className='container-info-caballos'>
           <div className='caballo1 m-b-20'>
-            <div className='test'>
+            <div className={activateAnimation ? 'activeAnimation' : 'inactiveAnimation'}>
               <div className='m-l-10-percent text-caballos-numero'>0</div>
-              <div className='m-r-10-percent text-caballos-nombre'>Cañonero</div>
+              <div className='text-caballos-nombre'>Cañonero</div>
             </div>
           </div>
           <div className='caballo2 m-b-20'>
-            <div className='test'>
+            <div className={activateAnimation ? 'activeAnimation' : 'inactiveAnimation'}>
               <div className='m-l-10-percent text-caballos-numero'>0</div>
-              <div className='m-r-10-percent text-caballos-nombre'>Cañonero</div>
+              <div className='text-caballos-nombre'>Cañonero</div>
             </div>
           </div>
           <div className='caballo3'>
-            <div className='test'>
+            <div className={activateAnimation ? 'activeAnimation' : 'inactiveAnimation'}>
               <div className='m-l-10-percent text-caballos-numero'>0</div>
-              <div className='m-r-10-percent text-caballos-nombre'>Cañonero</div>
+              <div className='text-caballos-nombre'>Cañonero</div>
             </div>
           </div>
         </div>
