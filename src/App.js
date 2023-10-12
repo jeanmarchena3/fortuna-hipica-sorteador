@@ -1,16 +1,25 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button, message } from 'antd';
+import dayjs from 'dayjs';
 import './App.css';
 
-import { initialData } from './api';
+import { initialData, getSorteos, insertarResultadosTriples } from './api';
+import { getDayName } from './utils';
 
 const App = () => {
+  const searchParams = new URLSearchParams(window.location.search);
+  const paramConcurso = searchParams.get('concurso');
+
   const [activateAnimation, setActivateAnimation] = useState(false);
   const [caballos, setCaballos] = useState([]);
   const [casilla1, setCassilla1] = useState([]);
   const [casilla2, setCassilla2] = useState([]);
   const [casilla3, setCassilla3] = useState([]);
+
+  const [sorteo, setSorteo] = useState({});
+  const [concurso, setConcurso] = useState({});
+  const [dateTriple, setDateTriple] = useState('');
 
   //const randInit = Math.floor(Math.random() * 10);
   const [randCasilla1, setRandCasilla1] = useState(Math.floor(Math.random() * 10));
@@ -40,10 +49,28 @@ const App = () => {
       const { data: response } = await initialData();
       const { data } = response;
       const { caballos = [] } = data;
+      let { concursos = [] } = data;
+
       setCassilla1(caballos.filter(x => x.casilla === 1));
       setCassilla2(caballos.filter(x => x.casilla === 2));
       setCassilla3(caballos.filter(x => x.casilla === 3));
       setCaballos(caballos);
+
+      concursos = concursos.filter(x=> x.id === parseInt(paramConcurso, 10));
+      concursos.length > 0 && setConcurso(concursos[0]);
+
+    } catch (error) {
+      message.error('Ha ocurrido un error, intente nuevamente');
+      console.log(error);
+    }
+  };
+
+  const getDataSorteos = async () =>{
+    try {
+      const { data = [] } = await getSorteos({ status: 'active' });
+
+      data.length > 0 && setSorteo(data[0]);
+
     } catch (error) {
       message.error('Ha ocurrido un error, intente nuevamente');
       console.log(error);
@@ -52,7 +79,28 @@ const App = () => {
 
   useEffect(() => {
     getInitialData();
+    getDataSorteos();
   }, []);
+
+  useEffect(() => {
+    if (Object.keys(sorteo).length > 0 && Object.keys(concurso).length > 0) {
+      const { fecha } = sorteo;
+      const { numero_dia } = concurso;
+      const auxDate = dayjs(fecha).day(numero_dia).add(-7, 'day').format('DD/MM/YYYY');
+      setDateTriple(auxDate);
+    }
+  }, [sorteo, concurso]);
+
+  const callInsertarResultadosTriples = async data =>{
+    console.log('data a enviar: ', data);
+    try {
+      await insertarResultadosTriples(data);
+      message.success('Resultados de triple registrados exitosamente');
+    } catch (error) {
+      message.error('Ha ocurrido un error, intente nuevamente');
+      console.log(error);
+    }
+  };
 
   //verificacion general
   useEffect(() => {
@@ -78,6 +126,20 @@ const App = () => {
       setValueCasilla1(auxValueCasilla1);
       setValueCasilla2(auxValueCasilla2);
       setValueCasilla3(auxValueCasilla3);
+
+      const { nro_caballo: nro_caballo1 } = auxValueCasilla1[0];
+      const { nro_caballo: nro_caballo2 } = auxValueCasilla2[0];
+      const { nro_caballo: nro_caballo3 } = auxValueCasilla3[0];
+      const resultado = ''.concat(nro_caballo1, nro_caballo2, nro_caballo3);
+
+      const { id: sorteo_id } = sorteo;
+      const data = {
+        sorteo_id,
+        concurso_id: parseInt(paramConcurso, 10),
+        resultado: parseInt(resultado, 10)
+      };
+
+      callInsertarResultadosTriples(data);
     }
   }, [endCasilla1, endCasilla2, endCasilla3]);
 
@@ -147,9 +209,6 @@ const App = () => {
     setActivateAnimation(true);
   };
 
-  /*   console.log('casilla 1: ', casilla1);
-  console.log('casilla 2: ', casilla2);
-  console.log('casilla 3: ', casilla3); */
   return (
     <div className='App'>
       {caballos.length > 0 &&
@@ -157,16 +216,16 @@ const App = () => {
         <div className='main-container-info'>
           <div className='container-info-reunion'>
             <div className='container-data-reunion reunion'>
-          SORTEO N 002
+              {sorteo.nombre}
             </div>
             <div className='container-data-reunion m-l-10 dia-triple'>
-          MARTES
+              {getDayName(concurso.numero_dia)}
             </div>
             <div className='container-data-reunion m-l-10 fecha-triple'>
-          06/10/2023
+              {dateTriple}
             </div>
             <div className='container-data-reunion m-l-10 hora-triple'>
-          1:00 PM
+              {concurso.hora}
             </div>
           </div>
         </div>
