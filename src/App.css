@@ -152,8 +152,8 @@
 }
 
 @keyframes mymove {
-  from {left: 0px;}
-  to {left: 45px;}
+  from {left: 0px; opacity: 1;}
+  to {left: 45px; opacity: 0;}
 }
 
 /* Boton de partida */
