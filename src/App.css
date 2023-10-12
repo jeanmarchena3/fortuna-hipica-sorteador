@@ -83,7 +83,7 @@
 }
 
 .text-caballos-nombre{
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -113,7 +113,7 @@
 .animation.active {
   animation-duration: 0.1s;
   animation-name: mymove ;
-  animation-iteration-count: 5;
+  animation-iteration-count: 50;
 }
 
 .animation2 {
@@ -130,7 +130,7 @@
 .animation2.active {
   animation-duration: 0.1s;
   animation-name: mymove ;
-  animation-iteration-count: 5;
+  animation-iteration-count: 50;
 }
 
 
@@ -148,16 +148,13 @@
 .animation3.active {
   animation-duration: 0.1s;
   animation-name: mymove ;
-  animation-iteration-count: 5;
+  animation-iteration-count: 50;
 }
-
-
 
 @keyframes mymove {
   from {left: 0px;}
   to {left: 45px;}
 }
-
 
 /* Boton de partida */
 .button-partida{
@@ -174,6 +171,7 @@
   color: white;
   font-style: italic;
   font-weight: bolder;
+  line-height: normal;
 }
 
 .button-partida:hover{
