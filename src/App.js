@@ -233,8 +233,8 @@ const App = () => {
           <div className='container-info-caballos'>
             <div className='caballo1 m-b-20'>
               <div className='animation'>
-                <div className='numero1 m-l-10-percent text-caballos-numero'>{casilla1[randCasilla1].nro_caballo}</div>
-                <div className='texto1 text-caballos-nombre'>{casilla1[randCasilla1].nombre}</div>
+                <div className='numero1 m-l-10-percent text-caballos-numero'>{/* {casilla1[randCasilla1].nro_caballo} */}</div>
+                <div className='texto1 text-caballos-nombre'>{/* {casilla1[randCasilla1].nombre} */}</div>
               </div>
             </div>
             <div className='caballo2 m-b-20'>
