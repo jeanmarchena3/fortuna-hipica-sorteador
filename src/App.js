@@ -239,14 +239,14 @@ const App = () => {
             </div>
             <div className='caballo2 m-b-20'>
               <div className='animation2'>
-                <div className='numero2 m-l-10-percent text-caballos-numero'>{casilla2[randCasilla2].nro_caballo}</div>
-                <div className='texto2 text-caballos-nombre'>{casilla2[randCasilla2].nombre}</div>
+                <div className='numero2 m-l-10-percent text-caballos-numero'>{/* {casilla2[randCasilla2].nro_caballo} */}</div>
+                <div className='texto2 text-caballos-nombre'>{/* {casilla2[randCasilla2].nombre} */}</div>
               </div>
             </div>
             <div className='caballo3 m-b-20'>
               <div className='animation3'>
-                <div className='numero3 m-l-10-percent text-caballos-numero'>{casilla3[randCasilla3].nro_caballo}</div>
-                <div className='texto3 text-caballos-nombre'>{casilla3[randCasilla3].nombre}</div>
+                <div className='numero3 m-l-10-percent text-caballos-numero'>{/* {casilla3[randCasilla3].nro_caballo} */}</div>
+                <div className='texto3 text-caballos-nombre'>{/* {casilla3[randCasilla3].nombre} */}</div>
               </div>
             </div>
           </div>
