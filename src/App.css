@@ -111,7 +111,7 @@
 }
 
 .animation.active {
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-name: mymove ;
   animation-iteration-count: 20;
 }
@@ -128,7 +128,7 @@
 }
 
 .animation2.active {
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-name: mymove ;
   animation-iteration-count: 25;
 }
@@ -146,7 +146,7 @@
 }
 
 .animation3.active {
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   animation-name: mymove ;
   animation-iteration-count: 30;
 }
